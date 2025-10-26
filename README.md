@@ -155,9 +155,3 @@ except requests.exceptions.RequestException as e:
 - 네트워크 연결이 불안정할 경우 재시도 로직을 구현하세요
 - 대량의 요청을 보낼 경우 적절한 간격을 두고 호출하세요
 
-## 📞 문의사항
-
-API 사용 중 문제가 발생하면 CSmart-AI 팀에 문의해주세요.
-
----
-**CSmart-AI** | FAQ 답변 생성 API

@@ -1,0 +1,17 @@
+# 큰 파일들 제외
+cache/
+gemma2-finetuned/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Python 캐시
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 기타
+.DS_Store
+Thumbs.db

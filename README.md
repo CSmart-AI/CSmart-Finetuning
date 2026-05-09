@@ -16,7 +16,7 @@
     "question": "질문 내용",
     "max_tokens": 80,
     "temperature": 0.3,
-    "top_k": 3,
+    "top_k": 50,
     "top_p": 0.95,
     "repetition_penalty": 1.2
 }
@@ -26,7 +26,7 @@
 - `question` (필수): 질문 내용
 - `max_tokens` (선택, 기본값: 80): 생성할 답변의 최대 토큰 수
 - `temperature` (선택, 기본값: 0.3): 답변의 다양성 (0.1~1.0)
-- `top_k` (선택, 기본값: 3): Top-K 샘플링
+- `top_k` (선택, 기본값: 50): Top-K 샘플링
 - `top_p` (선택, 기본값: 0.95): Top-P (nucleus) 샘플링
 - `repetition_penalty` (선택, 기본값: 1.2): 반복 페널티
 

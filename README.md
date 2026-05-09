@@ -1,9 +1,9 @@
 # CSmart-FAQ API 사용 가이드
 
-## 🚀 API 개요
+## API 개요
 이 API는 교육 관련 FAQ 질문에 대한 답변을 생성하는 서비스입니다. Gemma 2B 모델을 파인튜닝하여 구축되었습니다.
 
-## 📡 API 엔드포인트
+## API 엔드포인트
 
 ### 기본 정보
 - **URL**: `https://csmart-ai-faq-finetuning.hf.space/predict`
@@ -16,7 +16,7 @@
     "question": "질문 내용",
     "max_tokens": 80,
     "temperature": 0.3,
-    "top_k": 50,
+    "top_k": 3,
     "top_p": 0.95,
     "repetition_penalty": 1.2
 }
@@ -26,7 +26,7 @@
 - `question` (필수): 질문 내용
 - `max_tokens` (선택, 기본값: 80): 생성할 답변의 최대 토큰 수
 - `temperature` (선택, 기본값: 0.3): 답변의 다양성 (0.1~1.0)
-- `top_k` (선택, 기본값: 50): Top-K 샘플링
+- `top_k` (선택, 기본값: 3): Top-K 샘플링
 - `top_p` (선택, 기본값: 0.95): Top-P (nucleus) 샘플링
 - `repetition_penalty` (선택, 기본값: 1.2): 반복 페널티
 
@@ -37,7 +37,7 @@
 }
 ```
 
-## 💻 사용 예제
+## 사용 예제
 
 ### Python
 ```python
@@ -107,7 +107,7 @@ curl -X POST "https://csmart-ai-faq-finetuning.hf.space/predict" \
      }'
 ```
 
-## 🔧 에러 처리
+## 에러 처리
 
 ### HTTP 상태 코드
 - `200`: 성공
@@ -141,17 +141,4 @@ except requests.exceptions.Timeout:
 except requests.exceptions.RequestException as e:
     print(f"네트워크 오류: {e}")
 ```
-
-## 📊 성능 최적화 팁
-
-1. **타임아웃 설정**: 120초 권장
-2. **재시도 로직**: 실패 시 3회까지 재시도
-3. **배치 처리**: 여러 질문을 순차적으로 처리
-4. **캐싱**: 동일한 질문에 대한 답변 캐싱 고려
-
-## 🚨 주의사항
-
-- API 호출 시 타임아웃을 충분히 설정하세요 (최소 120초)
-- 네트워크 연결이 불안정할 경우 재시도 로직을 구현하세요
-- 대량의 요청을 보낼 경우 적절한 간격을 두고 호출하세요
 
